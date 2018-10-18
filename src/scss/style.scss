@@ -1,8 +1,11 @@
-$menu-background: #1f2637;
-$menu-border: #141824;
-$menu-color: #78829d;
-$menu-hover: #15a4fa;
 $nav-background: #2f364a;
+$nav-border: #141824;
+$nav-color: #78829d;
+$nav-hover: #15a4fa;
+$main-background: #eef1f7;
+$main-border: #dadfea;
+$main-color: #8c97b2;
+$content-color: #444c63;
 $foo-background: #181e2c;
 
 @font-face {
@@ -25,10 +28,8 @@ body {
 html,
 body,
 div,
-form,
-fieldset,
-legend,
-label {
+label,
+p {
   margin: 0;
   padding: 0;
 }
@@ -50,232 +51,346 @@ a:hover {
   font-family: Proxima-Nova;
   width: 100%;
 
-  & .pl-navtop {
-    background-color: $nav-background;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 45px;
-    width: 100%;
-
-    &__info {
-      display: flex;
-      justify-content: flex-end;
-      font-size: 13px;
-      text-align: right;
-      width: 33%;
-
-      &-item {
-        display: flex;
-        align-items: center;
-        color: $menu-color;
-        cursor: pointer;
-        height: 45px;
-        padding: 0 12px;
-
-        & .avatar {
-          border: 2px solid #fff;
-          border-radius: 50%;
-          height: 32px;
-          margin-right: 12px;
-          vertical-align: middle;
-          width: 32px;
-        }
-
-        & .icon {
-          margin: 0 18px 0 24px;
-        }
-
-        &:hover {
-          background-color: $menu-hover;
-          color: #fff;
-        }
-      }
-    }
-
-    &__menu {
-      padding: 0 20px;
-      text-align: left;
-      width: 33%;
-
-      &-item {
-        border-radius: 50%;
-        display: inline-block;
-        height: 10px;
-        width: 10px;
-
-        &.red {
-          background-color: #e76847;
-        }
-
-        &.yellow {
-          background-color: #fabf00;
-        }
-
-        &.blue {
-          background-color: #52bea6;
-        }
-      }
-    }
-
-    &__title {
-      font-size: 12px;
-      text-align: center;
-      width: 33%;
-
-      &-item {
-        color: $menu-color;
-      }
-    }
-  }
-
-  & .pl-navside {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: $menu-background;
-    left: 0;
-    top: 45px;
-    width: 200px;
-
-    &__create {
+  &__header {
+    & .pl-navtop {
+      background-color: $nav-background;
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 120px;
-      border-bottom: 4px solid $menu-border;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 45px;
+      width: 100%;
 
-      &-item {
-        cursor: pointer;
+      &__info {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f2795a;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 14px;
-        font-weight: bold;
-        height: 44px;
-        width: 160px;
+        justify-content: flex-end;
+        font-size: 13px;
+        text-align: right;
+        width: 33%;
 
-        & .icon {
-          font-size: 16px;
-          margin-right: 18px;
-        }
+        &-item {
+          display: flex;
+          align-items: center;
+          color: $nav-color;
+          cursor: pointer;
+          height: 45px;
+          padding: 0 12px;
 
-        &:hover {
-          opacity: .8;
+          & .avatar {
+            border: 2px solid #fff;
+            border-radius: 50%;
+            height: 32px;
+            margin-right: 12px;
+            vertical-align: middle;
+            width: 32px;
+          }
+
+          & .icon {
+            margin: 0 18px 0 24px;
+          }
+
+          &:hover {
+            background-color: $nav-hover;
+            color: #fff;
+          }
         }
       }
-    }
 
-    &__action {
-      border-top: 1px solid $nav-background;
-      border-bottom: 4px solid $menu-border;
-      height: 246px;
+      &__menu {
+        padding: 0 20px;
+        text-align: left;
+        width: 33%;
 
-      &-item {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        color: $menu-color;
-        height: 38px;
-
-        & .icon {
-          text-align: center;
-          width: 54px;
-        }
-
-        &:hover {
-          background-color: $menu-hover;
-          color: #fff;
-        }
-      }
-    }
-
-    &__legend {
-      border-top: 1px solid $nav-background;
-      border-bottom: 4px solid $menu-border;
-      height: 185px;
-      padding: 18px 0;
-
-      &-item {
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        color: $menu-color;
-        height: 37px;
-
-        & .circle {
+        &-item {
           border-radius: 50%;
-          margin: 0 24px;
-          height: 6px;
-          width: 6px;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
 
           &.red {
-            background-color: #e64c66;
+            background-color: #e76847;
           }
 
           &.yellow {
-            background-color: #ffab00;
+            background-color: #fabf00;
           }
 
           &.blue {
-            background-color: #00bfdd;
-          }
-
-          &.purple {
-            background-color: #7874cf;
+            background-color: #52bea6;
           }
         }
       }
-    }
 
-    &__history {
-      border-top: 1px solid $nav-background;
-      height: 270px;
-      padding: 22px;
-
-      &-item {
-        display: flex;
+      &__title {
         font-size: 12px;
-        color: $menu-color;
-        margin-bottom: 22px;
+        text-align: center;
+        width: 33%;
 
-        & .icon {
-          font-size: 13px;
-          margin-right: 20px;
-          padding-top: 2px;
-          text-align: center;
+        &-item {
+          color: $nav-color;
         }
       }
     }
   }
 
-  & .pl-navbottom {
+  &__main {
     display: flex;
-    justify-content: flex-end;
-    background-color: $foo-background;
-    bottom: 0;
-    height: 45px;
-    position: fixed;
-    width: 100%;
 
-    &__action {
+    & .pl-navleft {
       display: flex;
-      color: #fff;
+      flex-direction: column;
+      background-color: #1f2637;
+      width: 200px;
 
-      &-item {
-        cursor: pointer;
+      &__create {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 55px;
+        height: 120px;
+        border-bottom: 4px solid $nav-border;
 
-        &:hover {
-          background-color: $menu-hover;
+        &-item {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f2795a;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+          height: 44px;
+          width: 160px;
+
+          & .icon {
+            font-size: 16px;
+            margin-right: 18px;
+          }
+
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+
+      &__action {
+        border-top: 1px solid $nav-background;
+        border-bottom: 4px solid $nav-border;
+        height: 246px;
+
+        &-item {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          font-size: 13px;
+          color: $nav-color;
+          height: 38px;
+
+          & .icon {
+            text-align: center;
+            width: 54px;
+          }
+
+          &:hover {
+            background-color: $nav-hover;
+            color: #fff;
+          }
+        }
+      }
+
+      &__legend {
+        border-top: 1px solid $nav-background;
+        border-bottom: 4px solid $nav-border;
+        height: 185px;
+        padding: 18px 0;
+
+        &-item {
+          display: flex;
+          align-items: center;
+          font-size: 13px;
+          color: $nav-color;
+          height: 37px;
+
+          & .circle {
+            border-radius: 50%;
+            margin: 0 24px;
+            height: 6px;
+            width: 6px;
+
+            &.red {
+              background-color: #e64c66;
+            }
+
+            &.yellow {
+              background-color: #ffab00;
+            }
+
+            &.blue {
+              background-color: #00bfdd;
+            }
+
+            &.purple {
+              background-color: #7874cf;
+            }
+          }
+        }
+      }
+
+      &__history {
+        border-top: 1px solid $nav-background;
+        height: 270px;
+        padding: 22px;
+
+        &-item {
+          display: flex;
+          font-size: 12px;
+          color: $nav-color;
+          margin-bottom: 22px;
+
+          & .icon {
+            font-size: 13px;
+            margin-right: 20px;
+            padding-top: 2px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    & .pl-navright {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 200px);
+
+      &__info {
+        display: flex;
+        align-items: center;
+        background-color: $main-background;
+        border-bottom: 1px solid #dadfea;
+        height: 70px;
+
+        &-item {
+          color: $content-color;
+          font-size: 22px;
+          padding-left: 23px;
+        }
+      }
+
+      &__manage {
+        display: flex;
+        align-items: center;
+        background-color: $main-background;
+        border-bottom: 1px solid $main-border;
+        height: 50px;
+
+        &-item {
+          display: flex;
+          align-items: center;
+          border-radius: 9.5px;
+          color: $main-color;
+          cursor: pointer;
+          font-size: 12px;
+          height: 20px;
+          margin-left: 20px;
+          padding: 0 10px;
+
+          &.action:hover {
+            background-color: #97b3ce;
+            color: #fff;
+          }
+
+          &.search {
+            margin-left: auto;
+
+            & .search-box {
+              border: 1px solid $main-border;
+              border-right: none;
+              border-radius: 15.5px 0 0 15.5px;
+              color: $main-color;
+              font-family: Proxima-Nova;
+              font-size: 13px;
+              padding: 0 15px;
+              height: 32px;
+              outline: none;
+              width: 368px;
+
+              &::placeholder {
+                color: $main-color;
+              }
+            }
+
+            & .search-btn {
+              display: flex;
+              align-items: center;
+              background: #fff;
+              border: 1px solid $main-border;
+              border-left: none;
+              border-radius: 0 15.5px 15.5px 0;
+              font-size: 14px;
+              height: 32px;
+              width: 32px;
+            }
+          }
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 700px;
+        padding: 20px 0 0 20px;
+        overflow-y: auto;
+
+        &-item {
+          padding-right: 20px;
+
+          & .book {
+            font-size: 16px;
+            color: $content-color;
+            padding: 11px 0;
+          }
+
+          & .author {
+            font-size: 12px;
+            color: #6f7d95;
+          }
+
+          & .rating {
+            font-size: 14px;
+            color: #ffab00;
+            padding: 11px 0;
+
+            & .icon {
+              margin-right: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    & .pl-navbottom {
+      display: flex;
+      justify-content: flex-end;
+      background-color: $foo-background;
+      height: 45px;
+      width: 100%;
+
+      &__action {
+        display: flex;
+        color: #fff;
+
+        &-item {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 55px;
+
+          &:hover {
+            background-color: $nav-hover;
+          }
         }
       }
     }
