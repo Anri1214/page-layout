@@ -15,19 +15,19 @@
   <header class="pl-container__header">
     <nav class="pl-navtop">
       <div class="pl-navtop__menu">
-        <div class="pl-navtop__menu-item red"></div>
-        <div class="pl-navtop__menu-item yellow"></div>
-        <div class="pl-navtop__menu-item blue"></div>
+        <div class="pl-navtop__menu--red"></div>
+        <div class="pl-navtop__menu--yellow"></div>
+        <div class="pl-navtop__menu--blue"></div>
       </div>
       <div class="pl-navtop__title">
-        <div class="pl-navtop__title-item">
+        <div class="pl-navtop__title--item">
           <i class="fa fa-book"></i> MyBookApp
         </div>
       </div>
       <div class="pl-navtop__info">
-        <div class="pl-navtop__info-item">Help Center</div>
-        <div class="pl-navtop__info-item">Our Support</div>
-        <div class="pl-navtop__info-item">
+        <div class="pl-navtop__info--clear">Help Center</div>
+        <div class="pl-navtop__info--clear">Our Support</div>
+        <div class="pl-navtop__info--img">
           <img src="img/avatar-01.png" class="avatar">
           John Doe
           <i class="fa fa-chevron-circle-down icon"></i>
@@ -39,97 +39,99 @@
   <main class="pl-container__main">
     <aside class="pl-navleft">
       <div class="pl-navleft__create">
-        <div class="pl-navleft__create-item">
+        <div class="pl-navleft__create--button">
           <i class="fa fa-plus icon"></i>
           ADD A BOOK
         </div>
       </div>
-      <div class="pl-navleft__action">
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-book icon"></i>
-          Now Reading
+      <section class="pl-navleft__section">
+        <div class="pl-navleft__action">
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-book icon"></i>
+            Now Reading
+          </div>
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-globe icon"></i>
+            Browse
+          </div>
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-shopping-cart icon"></i>
+            Buy Books
+          </div>
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-star icon"></i>
+            Favourite Books
+          </div>
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-list icon"></i>
+            Wishlist
+          </div>
+          <div class="pl-navleft__action--item">
+            <i class="fa fa-clock-o icon"></i>
+            History
+          </div>
         </div>
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-globe icon"></i>
-          Browse
+        <div class="pl-navleft__legend">
+          <div class="pl-navleft__legend--red">
+            <span class="circle"></span>
+            Must Read Titles
+          </div>
+          <div class="pl-navleft__legend--yellow">
+            <span class="circle"></span>
+            Best Of List
+          </div>
+          <div class="pl-navleft__legend--blue">
+            <span class="circle"></span>
+            Classic Novels
+          </div>
+          <div class="pl-navleft__legend--purple">
+            <span class="circle"></span>
+            Non Fiction
+          </div>
         </div>
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-shopping-cart icon"></i>
-          Buy Books
+        <div class="pl-navleft__history">
+          <div class="pl-navleft__history--item">
+            <i class="fa fa-clock-o icon"></i>
+            You added Fight Club by Chuck Palahniuk to your Must Read Titles.
+            <br><br>
+            24 minutes ago
+          </div>
+          <div class="pl-navleft__history--item">
+            <i class="fa fa-clock-o icon"></i>
+            You added The Trial by Franz Kafka to your Must Read Titles.
+            <br><br>
+            48 minutes ago
+          </div>
         </div>
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-star icon"></i>
-          Favourite Books
-        </div>
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-list icon"></i>
-          Wishlist
-        </div>
-        <div class="pl-navleft__action-item">
-          <i class="fa fa-clock-o icon"></i>
-          History
-        </div>
-      </div>
-      <div class="pl-navleft__legend">
-        <div class="pl-navleft__legend-item">
-          <span class="circle red"></span>
-          Must Read Titles
-        </div>
-        <div class="pl-navleft__legend-item">
-          <span class="circle yellow"></span>
-          Best Of List
-        </div>
-        <div class="pl-navleft__legend-item">
-          <span class="circle blue"></span>
-          Classic Novels
-        </div>
-        <div class="pl-navleft__legend-item">
-          <span class="circle purple"></span>
-          Non Fiction
-        </div>
-      </div>
-      <div class="pl-navleft__history">
-        <div class="pl-navleft__history-item">
-          <i class="fa fa-clock-o icon"></i>
-          You added Fight Club by Chuck Palahniuk to your Must Read Titles.
-          <br><br>
-          24 minutes ago
-        </div>
-        <div class="pl-navleft__history-item">
-          <i class="fa fa-clock-o icon"></i>
-          You added The Trial by Franz Kafka to your Must Read Titles.
-          <br><br>
-          48 minutes ago
-        </div>
-      </div>
+      </section>
     </aside>
     <aside class="pl-navright">
       <div class="pl-navright__info">
-        <div class="pl-navright__info-item">
+        <div class="pl-navright__info--item">
           Browse Available Books
         </div>
       </div>
       <div class="pl-navright__manage">
-        <div class="pl-navright__manage-item action">
+        <div class="pl-navright__manage--action">
           All Books
         </div>
-        <div class="pl-navright__manage-item action">
+        <div class="pl-navright__manage--action">
           Most Recent
         </div>
-        <div class="pl-navright__manage-item action">
+        <div class="pl-navright__manage--action">
           Most Popular
         </div>
-        <div class="pl-navright__manage-item action">
+        <div class="pl-navright__manage--action">
           Free Books
         </div>
-        <div class="pl-navright__manage-item search">
+        <div class="pl-navright__manage--search">
           <input type="text" class="search-box" placeholder="Enter Keywords">
           <i class="fa fa-search search-btn"></i>
         </div>
       </div>
       <div class="pl-navright__content">
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_6.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_6.png">
           <p class="book">Jewels of Nizam</p>
           <p class="author">by Geeta Devi</p>
           <p class="rating">
@@ -140,8 +142,8 @@
             <i class="fa fa-star icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_4.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_4.png">
           <p class="book">Cakes & Bakes</p>
           <p class="author">by Sanjeev Kapoor</p>
           <p class="rating">
@@ -152,8 +154,8 @@
             <i class="fa fa-star icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_2.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_2.png">
           <p class="book">Jamie’s Kitchen</p>
           <p class="author">by Jamie Oliver</p>
           <p class="rating">
@@ -164,8 +166,8 @@
             <i class="fa fa-star-half-o icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_9.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_9.png">
           <p class="book">Inexpensive Family Meals</p>
           <p class="author">by Simon Holst</p>
           <p class="rating">
@@ -176,8 +178,8 @@
             <i class="fa fa-star-o icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_7.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_7.png">
           <p class="book">Paleo Slow Cooking</p>
           <p class="author">by Chrissy Gower</p>
           <p class="rating">
@@ -188,8 +190,8 @@
             <i class="fa fa-star-half-o icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_10.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_10.png">
           <p class="book">Cook Like an Italian</p>
           <p class="author">by Tobie Puttock</p>
           <p class="rating">
@@ -200,8 +202,8 @@
             <i class="fa fa-star-o icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_3.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_3.png">
           <p class="book">Suneeta Vaswani</p>
           <p class="author">by Geeta Devi</p>
           <p class="rating">
@@ -212,8 +214,8 @@
             <i class="fa fa-star icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover.png">
           <p class="book">Jamie Does</p>
           <p class="author">by Jamie Oliver</p>
           <p class="rating">
@@ -224,8 +226,8 @@
             <i class="fa fa-star-o icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_8.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_8.png">
           <p class="book">Jamie’s italy</p>
           <p class="author">by Jamie Oliver</p>
           <p class="rating">
@@ -236,8 +238,8 @@
             <i class="fa fa-star icon"></i>
           </p>
         </div>
-        <div class="pl-navright__content-item">
-          <img src="img/book-cover_5.png">
+        <div class="pl-navright__content--item">
+          <img class="cover" src="img/book-cover_5.png">
           <p class="book">Vegetables Cookbook</p>
           <p class="author">by Matthew Biggs</p>
           <p class="rating">
@@ -248,6 +250,16 @@
             <i class="fa fa-star-o icon"></i>
           </p>
         </div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
+        <div class="pl-navright__content--hidden"></div>
       </div>
     </aside>
   </main>

@@ -68,13 +68,27 @@ a:hover {
         text-align: right;
         width: 33%;
 
-        &-item {
+        %header-button {
           display: flex;
           align-items: center;
           color: $nav-color;
           cursor: pointer;
           height: 45px;
           padding: 0 12px;
+          text-align: left;
+
+          &:hover {
+            background-color: $nav-hover;
+            color: #fff;
+          }
+        }
+
+        &--clear {
+          @extend %header-button;
+        }
+
+        &--img {
+          @extend %header-button;
 
           & .avatar {
             border: 2px solid #fff;
@@ -88,11 +102,6 @@ a:hover {
           & .icon {
             margin: 0 18px 0 24px;
           }
-
-          &:hover {
-            background-color: $nav-hover;
-            color: #fff;
-          }
         }
       }
 
@@ -101,23 +110,26 @@ a:hover {
         text-align: left;
         width: 33%;
 
-        &-item {
+        %header-circle {
           border-radius: 50%;
           display: inline-block;
           height: 10px;
           width: 10px;
+        }
 
-          &.red {
-            background-color: #e76847;
-          }
+        &--red {
+          @extend %header-circle;
+          background-color: #e76847;
+        }
 
-          &.yellow {
-            background-color: #fabf00;
-          }
+        &--yellow {
+          @extend %header-circle;
+          background-color: #fabf00;
+        }
 
-          &.blue {
-            background-color: #52bea6;
-          }
+        &--blue {
+          @extend %header-circle;
+          background-color: #52bea6;
         }
       }
 
@@ -126,7 +138,7 @@ a:hover {
         text-align: center;
         width: 33%;
 
-        &-item {
+        &--item {
           color: $nav-color;
         }
       }
@@ -149,7 +161,7 @@ a:hover {
         height: 120px;
         border-bottom: 4px solid $nav-border;
 
-        &-item {
+        &--button {
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -173,12 +185,17 @@ a:hover {
         }
       }
 
+      &__section {
+        height: calc(100vh - 45px - 45px - 120px);
+        overflow-y: auto;
+      }
+
       &__action {
         border-top: 1px solid $nav-background;
         border-bottom: 4px solid $nav-border;
         height: 246px;
 
-        &-item {
+        &--item {
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -187,8 +204,8 @@ a:hover {
           height: 38px;
 
           & .icon {
+            margin: 0 20px 0 22px;
             text-align: center;
-            width: 54px;
           }
 
           &:hover {
@@ -204,7 +221,7 @@ a:hover {
         height: 185px;
         padding: 18px 0;
 
-        &-item {
+        %legend-item {
           display: flex;
           align-items: center;
           font-size: 13px;
@@ -216,32 +233,48 @@ a:hover {
             margin: 0 24px;
             height: 6px;
             width: 6px;
+          }
+        }
 
-            &.red {
-              background-color: #e64c66;
-            }
+        &--red {
+          @extend %legend-item;
 
-            &.yellow {
-              background-color: #ffab00;
-            }
+          & .circle {
+            background-color: #e64c66;
+          }
+        }
 
-            &.blue {
-              background-color: #00bfdd;
-            }
+        &--yellow {
+          @extend %legend-item;
 
-            &.purple {
-              background-color: #7874cf;
-            }
+          & .circle {
+            background-color: #ffab00;
+          }
+        }
+
+        &--blue {
+          @extend %legend-item;
+
+          & .circle {
+            background-color: #00bfdd;
+          }
+        }
+
+        &--purple {
+          @extend %legend-item;
+
+          & .circle {
+            background-color: #7874cf;
           }
         }
       }
 
       &__history {
         border-top: 1px solid $nav-background;
-        height: 270px;
+        height: calc(100vh - 45px - 45px - 120px - 185px - 246px);
         padding: 22px;
 
-        &-item {
+        &--item {
           display: flex;
           font-size: 12px;
           color: $nav-color;
@@ -269,7 +302,7 @@ a:hover {
         border-bottom: 1px solid #dadfea;
         height: 70px;
 
-        &-item {
+        &--item {
           color: $content-color;
           font-size: 22px;
           padding-left: 23px;
@@ -283,53 +316,57 @@ a:hover {
         border-bottom: 1px solid $main-border;
         height: 50px;
 
-        &-item {
+        %manage-item {
           display: flex;
           align-items: center;
           border-radius: 9.5px;
           color: $main-color;
           cursor: pointer;
           font-size: 12px;
-          height: 20px;
-          margin-left: 20px;
-          padding: 0 10px;
+          padding: 4px 10px;
+        }
 
-          &.action:hover {
+        &--action {
+          @extend %manage-item;
+          margin-left: 20px;
+
+          &:hover {
             background-color: #97b3ce;
             color: #fff;
           }
+        }
 
-          &.search {
-            margin-left: auto;
+        &--search {
+          @extend %manage-item;
+          margin-left: auto;
 
-            & .search-box {
-              border: 1px solid $main-border;
-              border-right: none;
-              border-radius: 15.5px 0 0 15.5px;
+          & .search-box {
+            border: 1px solid $main-border;
+            border-right: none;
+            border-radius: 15.5px 0 0 15.5px;
+            color: $main-color;
+            font-family: Proxima-Nova;
+            font-size: 13px;
+            padding: 0 15px;
+            height: 32px;
+            outline: none;
+            width: calc(100vw - 850px);
+
+            &::placeholder {
               color: $main-color;
-              font-family: Proxima-Nova;
-              font-size: 13px;
-              padding: 0 15px;
-              height: 32px;
-              outline: none;
-              width: 368px;
-
-              &::placeholder {
-                color: $main-color;
-              }
             }
+          }
 
-            & .search-btn {
-              display: flex;
-              align-items: center;
-              background: #fff;
-              border: 1px solid $main-border;
-              border-left: none;
-              border-radius: 0 15.5px 15.5px 0;
-              font-size: 14px;
-              height: 32px;
-              width: 32px;
-            }
+          & .search-btn {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid $main-border;
+            border-left: none;
+            border-radius: 0 15.5px 15.5px 0;
+            font-size: 14px;
+            height: 32px;
+            width: 28px;
           }
         }
       }
@@ -337,12 +374,18 @@ a:hover {
       &__content {
         display: flex;
         flex-wrap: wrap;
-        height: 700px;
-        padding: 20px 0 0 20px;
+        justify-content: space-evenly;
+        height: calc(100vh - 45px - 45px - 50px - 70px);
+        padding: 20px;
         overflow-y: auto;
 
-        &-item {
-          padding-right: 20px;
+        &--item {
+          margin: 15px 20px;
+          width: 200px;
+
+          & .cover {
+            width: 200px;
+          }
 
           & .book {
             font-size: 16px;
@@ -358,12 +401,24 @@ a:hover {
           & .rating {
             font-size: 14px;
             color: #ffab00;
-            padding: 11px 0;
+            padding-top: 11px;
 
             & .icon {
               margin-right: -2px;
             }
           }
+        }
+
+        &--hidden {
+          height: 0;
+          margin: 0 20px;
+          visibility: hidden;
+          width: 200px;
+        }
+
+        &::after {
+          content: "";
+          flex: auto;
         }
       }
     }
@@ -374,6 +429,8 @@ a:hover {
       display: flex;
       justify-content: flex-end;
       background-color: $foo-background;
+      bottom: 0;
+      position: absolute;
       height: 45px;
       width: 100%;
 
@@ -390,6 +447,123 @@ a:hover {
 
           &:hover {
             background-color: $nav-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .pl-container {
+    &__header {
+      & .pl-navtop {
+        &__info {
+          width: 60%;
+
+          &--clear {
+            padding: 0 5px !important;
+          }
+
+          &--img {
+            padding: 0 5px !important;
+
+            & .icon {
+              margin: 0 4px 0 8px;
+            }
+          }
+        }
+
+        &__menu {
+          padding: 0 7px;
+          width: 15%;
+        }
+
+        &__title {
+          width: 25%;
+        }
+      }
+    }
+
+    &__main {
+      & .pl-navleft {
+        width: 150px;
+
+        &__create {
+          &--button {
+            height: 60px;
+            width: 120px;
+
+
+            & .icon {
+              font-size: 16px;
+              margin: 18px;
+            }
+          }
+        }
+
+        &__action {
+          &--item {
+            & .avatar {
+              margin-right: 8px;
+            }
+
+            & .icon {
+              margin: 0 10px 0 12px;
+            }
+          }
+        }
+
+        &__legend {
+          padding: 8px 0;
+
+          & .circle {
+            margin: 0 14px !important;
+          }
+        }
+
+        &__history {
+          padding: 12px;
+
+          &--item {
+            & .icon {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      & .pl-navright {
+        width: calc(100% - 150px);
+
+        &__info {
+          &--item {
+            padding-left: 12px;
+          }
+        }
+
+        &__manage {
+          &--action {
+            font-size: 10px;
+            margin-left: 6px;
+            padding: 4px !important;
+            overflow-y: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .pl-container {
+    &__main {
+      & .pl-navright {
+        &__content {
+          &--item {
+            & .cover {
+              width: 150px;
+            }
           }
         }
       }
